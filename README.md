@@ -4,6 +4,8 @@ This repository contains code for the manuscript *Geographically Weighted Cox
 Regression and Its Application to Prostate Cancer Survival Data in Louisiana* by
 Yishu Xue, Elizabeth D. Schifano and Guanyu Hu.
 
+<a href="https://zenodo.org/badge/latestdoi/183830436"><img src="https://zenodo.org/badge/183830436.svg" alt="DOI"></a>
+
 ## real_data
 
 `louiscounty.RData` contains the geographical information about counties in
