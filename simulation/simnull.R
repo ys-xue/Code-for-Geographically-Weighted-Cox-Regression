@@ -11,7 +11,7 @@ nsims <- 1000
 bw <- seq(0.5, 50, by = 0.5)
 
 distMatbackup <- distMat
-distMatbackup[distMatbackup == 1] <- 0
+distMatbackup[distMatbackup <= 1.28952] <- 0
 
 ## null simulation, truebetas is a matrix with 64 rows, each row having the
 ## same value
