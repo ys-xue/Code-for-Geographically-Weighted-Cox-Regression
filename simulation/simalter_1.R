@@ -62,7 +62,6 @@ sim <- function(k){
                 loglike2 <- sum(rev(delta) * (
                     X %*% locfit$coefficients -log(cumsum(exp(
                         X %*% locfit$coefficients)))))
-                ticlocal[j] <- ticlocal[j] - 2 * loglike2
                 
                 p1locmat[i, j] <- locfit$coefficients[1]
                 p2locmat[i, j] <- locfit$coefficients[2]
