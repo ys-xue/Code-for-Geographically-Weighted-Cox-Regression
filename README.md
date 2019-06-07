@@ -6,6 +6,9 @@ Yishu Xue, Elizabeth D. Schifano and Guanyu Hu.
 
 <a href="https://zenodo.org/badge/latestdoi/183830436"><img src="https://zenodo.org/badge/183830436.svg" alt="DOI"></a>
 
+
+**county_centroids.md** contains the centroids of Louisiana counties.
+
 ## real_data
 
 `louiscounty.RData` contains the geographical information about counties in
