@@ -1,10 +1,11 @@
 # Geographically Weighted Cox Regression
 
-This repository contains code for the manuscript *Geographically Weighted Cox
-Regression and Its Application to Prostate Cancer Survival Data in Louisiana* by
-Yishu Xue, Elizabeth D. Schifano and Guanyu Hu.
+This repository contains code for the manuscript [Geographically Weighted Cox
+Regression and Its Application to Prostate Cancer Survival Data in
+Louisiana](https://onlinelibrary.wiley.com/doi/abs/10.1111/gean.12223) by
+Yishu Xue, Elizabeth D. Schifano and Guanyu Hu, published in *Geographical
+Analysis*.
 
-<a href="https://zenodo.org/badge/latestdoi/183830436"><img src="https://zenodo.org/badge/183830436.svg" alt="DOI"></a>
 
 
 **county_centroids.md** contains the centroids of Louisiana counties.
