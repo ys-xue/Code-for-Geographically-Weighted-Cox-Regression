@@ -7,7 +7,7 @@ samplesize <- sample(56:64, 64*1000, replace = TRUE)
 
 set.seed(2022)
 datalist <- purrr::map(1:64000, function(x) 
-    genData(0.02, c(0.7, 0.5, -0.8), samplesize[x], 0.1))
+    genData(0.02, c(0.7, 0.5, -0.8), samplesize[x], 60, 0.1))
 
 df <- ldply(datalist, data.frame)
 
