@@ -5,25 +5,33 @@ load("../real_data/louiscounty.RData")
 load("../real_data/graphDist.RData")
 source("./genData.R")
 
+n_reps <- 1000
+n_counties <- 64
+sample_size_upper <- 64
+sample_size_lower <- 56
 
 set.seed(2007)
-samplesize <- sample(56:64, 64 * 1000, replace = TRUE)
-betaind <- rep(1:64, 1000)
+samplesize <-
+  sample(sample_size_lower:sample_size_upper,
+         n_counties * n_reps,
+         replace = TRUE)
+betaind <- rep(1:n_counties, n_reps)
 
 
 
 beta <- c(0.7, 0.5, -0.8)
 
-truebetas <- matrix(rep(c(0.7, 0.5, -0.8), 64), nrow = 64, byrow = TRUE)
+truebetas <-
+  matrix(rep(beta, n_reps), nrow = n_counties, byrow = TRUE)
 truebetas <- truebetas + 0.08 * (graphDist[45, ])
 
-datalist <- purrr::map(1:64000, function(x) 
-    genData(0.02, truebetas[betaind[x],], samplesize[x], 60, 0.1))
+datalist <- purrr::map(1:n_counties * n_reps, function(x)
+  genData(0.02, truebetas[betaind[x],], samplesize[x], 60, 0.1))
 
 df <- ldply(datalist, data.frame)
-df$block <- rep(rep(1:64, 1000), samplesize)
-repind <- c(cumsum(samplesize)[64*(1:1000)][1], 
-            diff(cumsum(samplesize)[64*(1:1000)]))
-df$replicate <- rep(1:1000, repind)
+df$block <- rep(rep(1:n_counties, n_reps), samplesize)
+repind <- c(cumsum(samplesize)[n_counties * (1:n_reps)][1],
+            diff(cumsum(samplesize)[n_counties * (1:nreps)]))
+df$replicate <- rep(1:n_reps, repind)
 
 save(df, truebetas, file = "./alterdata2.RData")
